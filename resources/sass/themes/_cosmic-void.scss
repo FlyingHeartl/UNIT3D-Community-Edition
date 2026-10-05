@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    Cosmic Void – modern
    Alle Farben, Radien und Schatten sind unten als Basis-Tokens (--cv-*)
@@ -510,8 +509,16 @@ html::before {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: no-repeat right 40px top 80px / min(980px, 88vw) auto
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600' fill='none'%3E%3Cg stroke='%23c9c3ff' stroke-opacity='.16' stroke-width='1.2' transform='rotate(-16 450 300)'%3E%3Cellipse cx='450' cy='300' rx='430' ry='150'/%3E%3Cellipse cx='450' cy='300' rx='330' ry='112' stroke-dasharray='2 7'/%3E%3Cellipse cx='450' cy='300' rx='230' ry='78'/%3E%3C/g%3E%3Cg transform='rotate(-16 450 300)'%3E%3Ccircle cx='845' cy='255' r='14' fill='%238f82f5' fill-opacity='.18'/%3E%3Ccircle cx='845' cy='255' r='4.5' fill='%23e8e7f2'/%3E%3Ccircle cx='170' cy='345' r='3' fill='%235fd4c4'/%3E%3C/g%3E%3Cg stroke='%23c9c3ff' stroke-opacity='.3' stroke-width='1.2'%3E%3Cpath d='M70 90v14M63 97h14'/%3E%3Cpath d='M810 500v14M803 507h14'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600' fill='none'%3E%3Cg stroke='%23c9c3ff' stroke-opacity='.16' stroke-width='1.2' transform='rotate(-16 450 300)'%3E%3Cellipse cx='450' cy='300' rx='430' ry='150'/%3E%3Cellipse cx='450' cy='300' rx='330' ry='112' stroke-dasharray='2 7'/%3E%3Cellipse cx='450' cy='300' rx='230' ry='78'/%3E%3C/g%3E%3Cg transform='rotate(-16 450 300)'%3E%3Ccircle cx='845' cy='255' r='14' fill='%238f82f5' fill-opacity='.18'/%3E%3Ccircle cx='845' cy='255' r='4.5' fill='%23e8e7f2'/%3E%3Ccircle cx='170' cy='345' r='3' fill='%235fd4c4'/%3E%3C/g%3E%3Cg stroke='%23c9c3ff' stroke-opacity='.3' stroke-width='1.2'%3E%3Cpath d='M70 90v14M63 97h14'/%3E%3Cpath d='M810 500v14M803 507h14'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 40px top 80px;
+    background-size: 980px auto;
+}
+
+@media (max-width: 1100px) {
+    html::before {
+        background-size: 90vw auto;
+    }
 }
 
 /* Erdhorizont: dünne leuchtende Atmosphäre am unteren Rand */
@@ -521,7 +528,7 @@ body::after {
     z-index: -1;
     pointer-events: none;
     left: 50%;
-    top: calc(100vh - 15vh);
+    top: 85vh;
     width: 240vw;
     aspect-ratio: 1;
     transform: translateX(-50%);
@@ -662,7 +669,7 @@ i.torrent-icon {
     border: 1px solid var(--cv-line);
     border-left: 3px solid var(--cv-accent);
     border-radius: var(--cv-r-md);
-    width: min(var(--cv-page-max), 100% - 2 * var(--cv-gutter));
+    width: calc(100% - 2 * var(--cv-gutter));
     max-width: var(--cv-page-max);
     margin: 0 auto;
 }
@@ -731,7 +738,8 @@ main > article,
 .footer {
     text-shadow: 0 1px 10px #000;
     color: var(--cv-text-muted);
-    width: min(var(--cv-page-max), 100% - 2 * var(--cv-gutter));
+    width: calc(100% - 2 * var(--cv-gutter));
+    max-width: var(--cv-page-max);
     margin: 0 auto;
     padding: 24px 0;
 }
@@ -761,7 +769,8 @@ main > article,
 
 .top-nav__dropdown > ul > li > a,
 .top-nav__dropdown > ul > li > form > button {
-    width: min(300px, 90vw);
+    width: 300px;
+    max-width: 90vw;
     border-radius: var(--cv-r-sm);
     transition: background-color 0.15s ease-out;
 }
